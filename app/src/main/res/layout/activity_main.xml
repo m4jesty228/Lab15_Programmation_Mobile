@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- TITRE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gestion Étudiants"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp" />
+
+        <!-- CARTE AJOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="➕  Ajouter un étudiant"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom"
+                android:textColor="#5C6BC0"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="#1A237E"
+                android:hint="Entrer le nom" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prénom"
+                android:textColor="#5C6BC0"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/prenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#1A237E"
+                android:hint="Entrer le prénom" />
+
+            <Button
+                android:id="@+id/bn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valider"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/button_primary"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+        <!-- CARTE RECHERCHE / SUPPRESSION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔍  Chercher / Supprimer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1A237E"
+                android:paddingBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID Étudiant"
+                android:textColor="#5C6BC0"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="#1A237E"
+                android:hint="Entrer l'ID"
+                android:inputType="numberSigned" />
+            <!-- Boutons côte à côte -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/load"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Chercher"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_success"
+                    android:layout_marginRight="8dp"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Supprimer"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_danger"
+                    android:padding="12dp" />
+
+            </LinearLayout>
+
+            <!-- Résultat -->
+            <TextView
+                android:id="@+id/res"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/result_background"
+                android:padding="14dp"
+                android:textColor="#1A237E"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:hint="Résultat affiché ici" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+=======
+<!-- LinearLayout : conteneur vertical qui empile les éléments de haut en bas -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Bouton Afficher un message en haut: déclence l'affichage du Toast -->
+    <Button
+        android:id="@+id/btn_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afficher un message" />
+
+    <!-- TextView au centre: affiche la valeur du compteur -->
+    <TextView
+        android:id="@+id/txt_count"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="0"
+        android:textSize="96sp"
+        android:textColor="#3F51B5"
+        android:gravity="center"
+        android:background="#FF00FF" />
+
+    <!-- Bouton Incrémenter le compteur en bas: incrémente le compteur -->
+    <Button
+        android:id="@+id/btn_incrementer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Incrémenter le compteur" />
+
+</LinearLayout>
+>>>>>>> cdfb9aea165a74a7efc8c38e8bfefd108a356fba
