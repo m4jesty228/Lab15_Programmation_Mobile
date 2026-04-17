@@ -69,6 +69,6 @@ res/
 
 ## 👤 Auteur
 
-**Majesty**  
+**DOSSAH Yao Landry**  
 ENSA Marrakech — GCDSTE (S4)  
-Module M45 : Programmation Mobile Android avec Java
+Module : Programmation Mobile Android avec Java
