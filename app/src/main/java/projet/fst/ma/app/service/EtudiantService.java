@@ -15,12 +15,10 @@ import projet.fst.ma.app.util.MySQLiteHelper;
 public class EtudiantService {
 
     private static final String TABLE_NAME = "etudiant";
-
-    private static final String KEY_ID = "id";
-    private static final String KEY_NOM = "nom";
+    private static final String KEY_ID     = "id";
+    private static final String KEY_NOM    = "nom";
     private static final String KEY_PRENOM = "prenom";
-
-    private static final String[] COLUMNS = {KEY_ID, KEY_NOM, KEY_PRENOM};
+    private static final String[] COLUMNS  = {KEY_ID, KEY_NOM, KEY_PRENOM};
 
     private final MySQLiteHelper helper;
 
@@ -33,10 +31,8 @@ public class EtudiantService {
         ContentValues values = new ContentValues();
         values.put(KEY_NOM, e.getNom());
         values.put(KEY_PRENOM, e.getPrenom());
-
         db.insert(TABLE_NAME, null, values);
         Log.d("insert", e.getNom());
-
         db.close();
     }
 
@@ -46,7 +42,6 @@ public class EtudiantService {
         values.put(KEY_ID, e.getId());
         values.put(KEY_NOM, e.getNom());
         values.put(KEY_PRENOM, e.getPrenom());
-
         db.update(TABLE_NAME, values, "id = ?", new String[]{e.getId() + ""});
         db.close();
     }
@@ -54,25 +49,17 @@ public class EtudiantService {
     public Etudiant findById(int id) {
         Etudiant e = null;
         SQLiteDatabase db = this.helper.getReadableDatabase();
-
         Cursor c = db.query(
-                TABLE_NAME,
-                COLUMNS,
-                "id = ?",
-                new String[]{String.valueOf(id)},
-                null,
-                null,
-                null,
-                null
+                TABLE_NAME, COLUMNS,
+                "id = ?", new String[]{String.valueOf(id)},
+                null, null, null, null
         );
-
         if (c.moveToFirst()) {
             e = new Etudiant();
             e.setId(c.getInt(0));
             e.setNom(c.getString(1));
             e.setPrenom(c.getString(2));
         }
-
         c.close();
         db.close();
         return e;
@@ -86,11 +73,8 @@ public class EtudiantService {
 
     public List<Etudiant> findAll() {
         List<Etudiant> eds = new ArrayList<>();
-        String req = "select * from " + TABLE_NAME;
-
         SQLiteDatabase db = this.helper.getReadableDatabase();
-        Cursor c = db.rawQuery(req, null);
-
+        Cursor c = db.rawQuery("select * from " + TABLE_NAME, null);
         if (c.moveToFirst()) {
             do {
                 Etudiant e = new Etudiant();
@@ -101,7 +85,6 @@ public class EtudiantService {
                 Log.d("id = ", e.getId() + "");
             } while (c.moveToNext());
         }
-
         c.close();
         db.close();
         return eds;
